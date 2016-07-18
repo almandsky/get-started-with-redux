@@ -1,0 +1,71 @@
+{
+  "name": "get-started-with-redux",
+  "version": "0.0.1",
+  "description": "sample code from get started with redux",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint -c .eslintrc .",
+    "start": "node server.js",
+    "test": "cross-env NODE_ENV=test mocha --recursive --compilers js:babel-register --require ./test/setup.js",
+    "test:watch": "npm test -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/almandsky/get-started-with-redux.git"
+  },
+  "keywords": [
+    "redux",
+    "tutorial",
+    "get",
+    "started"
+  ],
+  "author": "almandsky",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/almandsky/get-started-with-redux/issues"
+  },
+  "homepage": "https://github.com/almandsky/get-started-with-redux#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "babel-polyfill": "^6.3.14",
+    "classnames": "^2.1.2",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "react-redux": "^4.2.1",
+    "redux": "^3.2.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.3.15",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-react-hmre": "^1.1.1",
+    "babel-register": "^6.3.13",
+    "chai": "^3.5.0",
+    "cross-env": "^1.0.7",
+    "eslint": "^2.13.1",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.9.2",
+    "eslint-plugin-jsx-a11y": "^1.5.3",
+    "eslint-plugin-react": "^5.2.2",
+    "expect": "^1.8.0",
+    "express": "^4.13.3",
+    "jsdom": "^5.6.1",
+    "mocha": "^2.2.5",
+    "node-libs-browser": "^0.5.2",
+    "raw-loader": "^0.5.1",
+    "react-addons-test-utils": "^0.14.7",
+    "style-loader": "^0.12.3",
+    "webpack": "^1.9.11",
+    "webpack-dev-middleware": "^1.2.0",
+    "webpack-hot-middleware": "^2.9.1"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "pre-commit": [
+    "lint"
+  ]
+}
