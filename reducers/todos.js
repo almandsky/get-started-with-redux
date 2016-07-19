@@ -1,4 +1,4 @@
-import { createStore, combineReducers } from 'redux';
+import { createStore } from 'redux';
 
 const todo = (state, action) => {
   switch (action.type) {
@@ -43,6 +43,23 @@ export function todos(state = [], action) {
       return state;
   }
 }
+
+// Implement the combineReducers
+
+const combineReducers = (reducers) =>
+  (state = {}, action) =>
+    Object.keys(reducers).reduce(
+      (nextState, key) => {
+        const newState = nextState;
+        newState[key] = reducers[key](
+          state[key],
+          action
+        );
+        return newState;
+      },
+      {}
+    );
+
 
 // Make use of the combineReducers from redux
 

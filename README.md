@@ -51,3 +51,20 @@ Create Reducer Composition with object
 ```
 git checkout 04_reducer_composition
 ```
+
+### Video 15
+
+Make use of the combineReducers from redux
+
+```
+git checkout 05_combine_reducer
+```
+
+### Video 16
+
+Implementing combineReducers from scratch
+
+```
+git checkout 06_impl_combine_reducers
+```
+
