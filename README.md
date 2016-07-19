@@ -19,11 +19,35 @@ npm test
 
 ## Checkout different branches based on the progress of the tutorial
 
+
+### Video 01~07
+
+Create reducer function and createStore
+
 ```
-01_purejs  - 01~07 videos - to create reducer function and createStore
+git checkout 01_purejs
+```
 
-02_react_reder - 08 video - React Counter example
+### Video 08
 
-03_immutable_reducer - 09~12 videos - Avoid mutation, Write reduces to add and toggle todo
+React Counter example
 
+```
+git checkout 02_react_reder
+```
+
+### Video 09~13
+
+Avoid mutation, Write reduces to add and toggle todo
+
+```
+git checkout 03_immutable_reducer
+```
+
+### Video 14
+
+Create Reducer Composition with object
+
+```
+git checkout 04_reducer_composition
 ```
