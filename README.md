@@ -16,3 +16,14 @@ open http://localhost:3000/
 ```
 npm test
 ```
+
+## Checkout different branches based on the progress of the tutorial
+
+```
+01_purejs  - 01~07 videos - to create reducer function and createStore
+
+02_react_reder - 08 video - React Counter example
+
+03_immutable_reducer - 09~12 videos - Avoid mutation, Write reduces to add and toggle todo
+
+```
