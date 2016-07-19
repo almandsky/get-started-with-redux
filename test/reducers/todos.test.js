@@ -94,7 +94,7 @@ describe('reducers', () => {
       id: 1,
       text: 'Go shopping'
     });
-    
+
     const stateAddAnotherTodo = {
       todos: [
         { id: 0,
@@ -130,7 +130,7 @@ describe('reducers', () => {
         }
       ],
       visibilityFilter: 'SHOW_ALL'
-    }
+    };
 
     expect(store.getState()).to.deep.equal(stateToggleTodo);
 
@@ -153,10 +153,8 @@ describe('reducers', () => {
         }
       ],
       visibilityFilter: 'SHOW_COMPLETED'
-    }
+    };
 
     expect(store.getState()).to.deep.equal(stateUpdateFilter);
-
   });
-
 });
