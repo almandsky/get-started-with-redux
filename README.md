@@ -68,3 +68,10 @@ Implementing combineReducers from scratch
 git checkout 06_impl_combine_reducers
 ```
 
+### Video 17~19
+
+Implement React Todo List for add, toggle filter todos.
+
+```
+git checkout 07_react_todo_list
+```
