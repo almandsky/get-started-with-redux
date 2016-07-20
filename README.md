@@ -75,3 +75,11 @@ Implement React Todo List for add, toggle filter todos.
 ```
 git checkout 07_react_todo_list
 ```
+
+### Video 20~21
+
+Extrack the Todo, TodoList component
+
+```
+git checkout 08_extract_react_component
+```
