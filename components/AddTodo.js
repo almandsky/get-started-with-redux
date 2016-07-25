@@ -2,9 +2,10 @@ import React from 'react';
 
 const { PropTypes } = React;
 
-const AddTodo = ({
-  store
-}) => {
+const AddTodo = (
+  props,
+  { store }
+) => {
   let input;
   return (
     <div>
@@ -29,5 +30,10 @@ const AddTodo = ({
 AddTodo.propTypes = {
   store: PropTypes.object.isRequired
 };
+
+AddTodo.contextTypes = {
+  store: PropTypes.object
+};
+
 
 export default AddTodo;
