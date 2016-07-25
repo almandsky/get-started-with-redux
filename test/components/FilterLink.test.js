@@ -1,46 +1,47 @@
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';
+const {
+  renderIntoDocument,
+  scryRenderedDOMComponentsWithTag,
+  Simulate
+} = TestUtils;
 import FilterLink from '../../components/FilterLink';
-import Link from '../../components/Link';
 import expect from 'expect';
+import { makeStore } from '../../reducers/todos';
+import stubContext from 'react-stub-context';
 
-function setup(selectedFilter = '') {
-  const props = {
-    filter: 'SHOW_ALL',
-    children: {},
-    onClick: expect.createSpy(),
-    store: {
-      getState: function get() {
-        return {
-          visibilityFilter: selectedFilter
-        };
-      }
-    }
-  };
-
-  const renderer = TestUtils.createRenderer();
-
-  renderer.render(
-    <FilterLink {...props} />
-  );
-
-  const output = renderer.getRenderOutput();
-
-  return {
-    props,
-    output,
-    renderer
-  };
-}
-
+let component = undefined;
+const store = makeStore();
 describe('FilterLink Components', () => {
-  it('renders a FilterLink', () => {
-    const { output } = setup();
-    expect(output.type).toBe(Link);
+  beforeEach(() => {
+    let TestFilterLink = stubContext(FilterLink, { store });
+    component = renderIntoDocument(
+      <TestFilterLink
+        filter="SHOW_COMPLETED"
+      >Completed</TestFilterLink>
+    );
   });
 
-  it('renders a FilterLink as span when selected', () => {
-    const { output } = setup('SHOW_ALL');
-    expect(output.type).toBe(Link);
+  it('renders a FilterLink as link when not selected', () => {
+    const link = scryRenderedDOMComponentsWithTag(component, 'a');
+
+    expect(link.length).toEqual(1);
+    expect(link[0].textContent).toEqual('Completed');
+  });
+
+  it('FilterLink change from a link to span when it is clicked', () => {
+    let link = scryRenderedDOMComponentsWithTag(component, 'a');
+
+    expect(link.length).toEqual(1);
+    expect(link[0].textContent).toEqual('Completed');
+
+    Simulate.click(link[0]);
+
+    const span = scryRenderedDOMComponentsWithTag(component, 'span');
+    expect(span.length).toEqual(1);
+    expect(span[0].textContent).toEqual('Completed');
+
+    link = scryRenderedDOMComponentsWithTag(component, 'a');
+    expect(link.length).toEqual(0);
   });
 });

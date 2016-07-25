@@ -1,5 +1,8 @@
 # get-started-with-redux
 
+[![build status](https://img.shields.io/travis/almandsky/get-started-with-redux/master.svg?style=flat-square)](https://travis-ci.org/almandsky/get-started-with-redux)
+
+
 Coding example from https://egghead.io/courses/getting-started-with-redux
 
 ## Run the example
@@ -91,4 +94,14 @@ Passing the store from the top level TodoApp
 
 ```
 git checkout 09_extract_container_components
+```
+
+### Video 25
+
+Passing the Store Down Implicitly via Context
+Update the unit test of containers
+Enable travis CI
+
+```
+git checkout 10_pass_store_via_context
 ```

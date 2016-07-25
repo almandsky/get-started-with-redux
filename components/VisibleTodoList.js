@@ -24,7 +24,7 @@ const getVisibleTodos = (
 
 class VisibleTodoList extends Component {
   componentDidMount() {
-    this.unsubscribe = this.props.store.subscribe(() =>
+    this.unsubscribe = this.context.store.subscribe(() =>
       this.forceUpdate()
     );
   }
@@ -33,8 +33,7 @@ class VisibleTodoList extends Component {
   }
 
   render() {
-    const props = this.props;
-    const store = props.store;
+    const { store } = this.context;
     const state = store.getState();
 
     return (
@@ -58,6 +57,10 @@ class VisibleTodoList extends Component {
 
 VisibleTodoList.propTypes = {
   store: PropTypes.object.isRequired
+};
+
+VisibleTodoList.contextTypes = {
+  store: PropTypes.object
 };
 
 export default VisibleTodoList;
