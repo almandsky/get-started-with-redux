@@ -3,7 +3,7 @@ import React from 'react';
 const { PropTypes } = React;
 
 const AddTodo = ({
-  onAddClick
+  store
 }) => {
   let input;
   return (
@@ -15,7 +15,10 @@ const AddTodo = ({
       />
       <button
         onClick={() => {
-          onAddClick(input.value);
+          store.dispatch({
+            type: 'ADD_TODO',
+            text: input.value
+          });
           input.value = '';
         }}
       >Add Todo</button>
@@ -24,7 +27,7 @@ const AddTodo = ({
 };
 
 AddTodo.propTypes = {
-  onAddClick: PropTypes.func
+  store: PropTypes.object.isRequired
 };
 
 export default AddTodo;
