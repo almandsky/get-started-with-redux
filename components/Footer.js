@@ -4,35 +4,30 @@ import FilterLink from './FilterLink';
 const { PropTypes } = React;
 
 const Footer = ({
-  visibilityFilter,
-  onFilterClick
+  store
 }) => (
   <p>
     Show:
     {' '}
     <FilterLink
       filter="SHOW_ALL"
-      currentFilter={visibilityFilter}
-      onClick={onFilterClick}
+      store={store}
     >All</FilterLink>
     {' '}
     <FilterLink
       filter="SHOW_ACTIVE"
-      currentFilter={visibilityFilter}
-      onClick={onFilterClick}
+      store={store}
     >Active</FilterLink>
     {' '}
     <FilterLink
       filter="SHOW_COMPLETED"
-      currentFilter={visibilityFilter}
-      onClick={onFilterClick}
+      store={store}
     >Completed</FilterLink>
   </p>
 );
 
 Footer.propTypes = {
-  visibilityFilter: PropTypes.string.isRequired,
-  onFilterClick: PropTypes.func
+  store: PropTypes.object.isRequired
 };
 
 export default Footer;

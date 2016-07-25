@@ -7,13 +7,42 @@ describe('reducers', () => {
     const stateBefore = [];
     const action = {
       type: 'ADD_TODO',
-      id: 0,
       text: 'Learn Redux'
     };
     const stateAfter = [
       {
         id: 0,
         text: 'Learn Redux',
+        completed: false
+      }
+    ];
+
+    deepFreeze(stateBefore);
+    deepFreeze(action);
+    expect(
+      todos(stateBefore, action)
+    ).to.deep.equal(stateAfter);
+  });
+
+  it('add two todos', () => {
+    const stateBefore = [{
+      id: 0,
+      text: 'Learn Redux',
+      completed: false
+    }];
+    const action = {
+      type: 'ADD_TODO',
+      text: 'Go Shopping'
+    };
+    const stateAfter = [
+      {
+        id: 0,
+        text: 'Learn Redux',
+        completed: false
+      },
+      {
+        id: 1,
+        text: 'Go Shopping',
         completed: false
       }
     ];
@@ -73,7 +102,6 @@ describe('reducers', () => {
     // Add todo
     store.dispatch({
       type: 'ADD_TODO',
-      id: 0,
       text: 'Learn Redux'
     });
     const stateAddTodo = {
@@ -91,7 +119,6 @@ describe('reducers', () => {
     // Add another todo
     store.dispatch({
       type: 'ADD_TODO',
-      id: 1,
       text: 'Go shopping'
     });
 

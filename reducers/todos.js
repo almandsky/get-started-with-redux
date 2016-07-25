@@ -2,12 +2,6 @@ import { createStore } from 'redux';
 
 const todo = (state, action) => {
   switch (action.type) {
-    case 'ADD_TODO':
-      return {
-        id: action.id,
-        text: action.text,
-        completed: false
-      };
     case 'TOGGLE_TODO':
       if (state.id !== action.id) {
         return state;
@@ -35,7 +29,11 @@ export function todos(state = [], action) {
     case 'ADD_TODO':
       return [
         ...state,
-        todo(undefined, action)
+        {
+          id: state.reduce((maxId, todoItem) => Math.max(todoItem.id, maxId), -1) + 1,
+          text: action.text,
+          completed: false
+        }
       ];
     case 'TOGGLE_TODO':
       return state.map(t => todo(t, action));

@@ -78,8 +78,17 @@ git checkout 07_react_todo_list
 
 ### Video 20~21
 
-Extrack the Todo, TodoList component
+Extract the Todo, TodoList component
 
 ```
 git checkout 08_extract_react_component
+```
+
+### Video 22~24
+
+Extract the FilterLink, VisibleTodoList and Addtodo container components
+Passing the store from the top level TodoApp
+
+```
+git checkout 09_extract_container_components
 ```
