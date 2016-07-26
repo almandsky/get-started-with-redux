@@ -27,9 +27,6 @@ const AddTodo = (
   );
 };
 
-AddTodo.propTypes = {
-  store: PropTypes.object.isRequired
-};
 
 AddTodo.contextTypes = {
   store: PropTypes.object
