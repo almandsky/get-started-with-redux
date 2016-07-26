@@ -1,36 +1,33 @@
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';
+const {
+  renderIntoDocument,
+  scryRenderedDOMComponentsWithTag
+} = TestUtils;
 import expect from 'expect';
 import AddTodo from '../../components/AddTodo';
+import { makeStore } from '../../reducers/todos';
+import stubContext from 'react-stub-context';
 
-
-function setup() {
-  const props = {
-    onAddClick: expect.createSpy()
-  };
-
-  const renderer = TestUtils.createRenderer();
-
-  renderer.render(
-    <AddTodo {...props} />
-  );
-
-  const output = renderer.getRenderOutput();
-
-  return {
-    props,
-    output,
-    renderer
-  };
-}
+let component = undefined;
+const store = makeStore();
 
 describe('AddTodo Components', () => {
+  beforeEach(() => {
+    let TestAddTodo = stubContext(AddTodo, { store });
+    component = renderIntoDocument(
+      <TestAddTodo />
+    );
+  });
+
   it('renders a AddTodo input and button', () => {
-    const { output } = setup();
-    expect(output.type).toBe('div');
-    const input = output.props.children[0];
-    expect(input.type).toBe('input');
-    const button = output.props.children[1];
-    expect(button.type).toBe('button');
+    const div = scryRenderedDOMComponentsWithTag(component, 'div');
+    expect(div.length).toEqual(1);
+
+    const input = scryRenderedDOMComponentsWithTag(component, 'input');
+    expect(input.length).toEqual(1);
+
+    const button = scryRenderedDOMComponentsWithTag(component, 'button');
+    expect(button.length).toEqual(1);
   });
 });
