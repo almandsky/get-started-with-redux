@@ -122,3 +122,11 @@ Generating Containers with connect() from React Redux
 ```
 git checkout 12_redux_connect
 ```
+
+### Video 30
+
+Extracting Action Creators
+
+```
+git checkout 13_action_creator
+```
