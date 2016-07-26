@@ -1,14 +1,12 @@
 import { expect } from 'chai';
 import deepFreeze from 'deep-freeze';
 import { todos, makeStore } from '../../reducers/todos';
+import { addTodo, toggleTodo, setVisibilityFilter } from '../../actions';
 
 describe('reducers', () => {
   it('add todo', () => {
     const stateBefore = [];
-    const action = {
-      type: 'ADD_TODO',
-      text: 'Learn Redux'
-    };
+    const action = addTodo('Learn Redux');
     const stateAfter = [
       {
         id: 0,
@@ -30,10 +28,7 @@ describe('reducers', () => {
       text: 'Learn Redux',
       completed: false
     }];
-    const action = {
-      type: 'ADD_TODO',
-      text: 'Go Shopping'
-    };
+    const action = addTodo('Go Shopping');
     const stateAfter = [
       {
         id: 0,
@@ -67,10 +62,7 @@ describe('reducers', () => {
         completed: false
       }
     ];
-    const action = {
-      type: 'TOGGLE_TODO',
-      id: 1
-    };
+    const action = toggleTodo(1);
     const stateAfter = [
       {
         id: 0,
@@ -100,10 +92,7 @@ describe('reducers', () => {
     expect(store.getState()).to.deep.equal(initialState);
 
     // Add todo
-    store.dispatch({
-      type: 'ADD_TODO',
-      text: 'Learn Redux'
-    });
+    store.dispatch(addTodo('Learn Redux'));
     const stateAddTodo = {
       todos: [
         { id: 0,
@@ -117,10 +106,7 @@ describe('reducers', () => {
     expect(store.getState()).to.deep.equal(stateAddTodo);
 
     // Add another todo
-    store.dispatch({
-      type: 'ADD_TODO',
-      text: 'Go shopping'
-    });
+    store.dispatch(addTodo('Go shopping'));
 
     const stateAddAnotherTodo = {
       todos: [
@@ -140,10 +126,7 @@ describe('reducers', () => {
 
     // Toggle todo
 
-    store.dispatch({
-      type: 'TOGGLE_TODO',
-      id: 1
-    });
+    store.dispatch(toggleTodo(1));
 
     const stateToggleTodo = {
       todos: [
@@ -163,10 +146,7 @@ describe('reducers', () => {
 
     // Update filter
 
-    store.dispatch({
-      type: 'SET_VISIBILITY_FILTER',
-      filter: 'SHOW_COMPLETED'
-    });
+    store.dispatch(setVisibilityFilter('SHOW_COMPLETED'));
 
     const stateUpdateFilter = {
       todos: [
