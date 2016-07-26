@@ -109,9 +109,16 @@ git checkout 10_pass_store_via_context
 
 ### Video 26
 
-Passing the Store Down with Provider from React Redux 
-
+Passing the Store Down with Provider from React Redux
 
 ```
 git checkout 11_redux_provider
+```
+
+### Video 27~29
+
+Generating Containers with connect() from React Redux
+
+```
+git checkout 12_redux_connect
 ```

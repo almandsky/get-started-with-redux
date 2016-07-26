@@ -18,9 +18,7 @@ describe('VisibleTodoList Components', () => {
   beforeEach(() => {
     let TestVisibleTodoList = stubContext(VisibleTodoList, { store });
     component = renderIntoDocument(
-      <TestVisibleTodoList
-        store={store}
-      />
+      <TestVisibleTodoList />
     );
   });
   it('renders a VisibleTodoList', () => {
