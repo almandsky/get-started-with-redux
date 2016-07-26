@@ -55,10 +55,6 @@ class VisibleTodoList extends Component {
   }
 }
 
-VisibleTodoList.propTypes = {
-  store: PropTypes.object.isRequired
-};
-
 VisibleTodoList.contextTypes = {
   store: PropTypes.object
 };

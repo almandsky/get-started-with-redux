@@ -1,8 +1,6 @@
 import React from 'react';
 import FilterLink from './FilterLink';
 
-const { PropTypes } = React;
-
 const Footer = () => (
   <p>
     Show:
@@ -20,9 +18,5 @@ const Footer = () => (
     >Completed</FilterLink>
   </p>
 );
-
-Footer.propTypes = {
-  store: PropTypes.object.isRequired
-};
 
 export default Footer;

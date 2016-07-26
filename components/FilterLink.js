@@ -34,10 +34,6 @@ class FilterLink extends Component {
   }
 }
 
-FilterLink.propTypes = {
-  store: PropTypes.object.isRequired
-};
-
 FilterLink.contextTypes = {
   store: PropTypes.object
 };

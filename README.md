@@ -2,8 +2,9 @@
 
 [![build status](https://img.shields.io/travis/almandsky/get-started-with-redux/master.svg?style=flat-square)](https://travis-ci.org/almandsky/get-started-with-redux)
 
+The purpose of this repo is to practice the code example from https://egghead.io/courses/getting-started-with-redux
 
-Coding example from https://egghead.io/courses/getting-started-with-redux
+Instead of using the http://jsbin.com for writing the code in one single file, this repo break down the components into separated files, which will be more like a real life example, and we can write unit test against each component.
 
 ## Run the example
 
@@ -104,4 +105,13 @@ Enable travis CI
 
 ```
 git checkout 10_pass_store_via_context
+```
+
+### Video 26
+
+Passing the Store Down with Provider from React Redux 
+
+
+```
+git checkout 11_redux_provider
 ```
