@@ -1,6 +1,6 @@
 # get-started-with-redux
 
-[![build status](https://img.shields.io/travis/almandsky/get-started-with-redux/master.svg?style=flat-square)](https://travis-ci.org/almandsky/get-started-with-redux)
+[![build status](https://img.shields.io/travis/almandsky/get-started-with-redux/master.svg?style=flat-square)](https://travis-ci.org/almandsky/get-started-with-redux) [![Build Status](https://semaphoreci.com/api/v1/almandsky/get-started-with-redux/branches/master/badge.svg)](https://semaphoreci.com/almandsky/get-started-with-redux)
 
 The purpose of this repo is to practice the code example from https://egghead.io/courses/getting-started-with-redux
 
