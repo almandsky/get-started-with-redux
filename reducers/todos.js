@@ -1,4 +1,4 @@
-import { createStore } from 'redux';
+import { createStore, compose } from 'redux';
 
 const todo = (state, action) => {
   switch (action.type) {
@@ -66,6 +66,12 @@ const todoApp = combineReducers({
   visibilityFilter
 });
 
+const reduxDevToolProp = '__REDUX_DEVTOOLS_EXTENSION_COMPOSE__';
+const composeEnhancers = window[reduxDevToolProp] || compose;
+
 export function makeStore() {
-  return createStore(todoApp);
+  return createStore(
+    todoApp,
+    composeEnhancers()
+  );
 }
